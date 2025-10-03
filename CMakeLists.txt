@@ -4,23 +4,25 @@ project(message_queue_ipc)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(message_queue STATIC message_queue.cpp)
-target_include_directories(message_queue PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
-add_executable(message_create message_create.cpp)
+add_library(message_queue STATIC ${SRC_DIR}/message_queue.cpp)
+target_include_directories(message_queue PUBLIC ${SRC_DIR})
+
+add_executable(message_create ${SRC_DIR}/message_create.cpp)
 target_link_libraries(message_create PRIVATE message_queue)
 
-add_executable(message_send message_send.cpp)
+add_executable(message_send ${SRC_DIR}/message_send.cpp)
 target_link_libraries(message_send PRIVATE message_queue)
 
-add_executable(message_receive message_receive.cpp)
+add_executable(message_receive ${SRC_DIR}/message_receive.cpp)
 target_link_libraries(message_receive PRIVATE message_queue)
 
-add_executable(message_chqbytes message_chqbytes.cpp)
+add_executable(message_chqbytes ${SRC_DIR}/message_chqbytes.cpp)
 target_link_libraries(message_chqbytes PRIVATE message_queue)
 
-add_executable(message_rm message_rm.cpp)
+add_executable(message_rm ${SRC_DIR}/message_rm.cpp)
 target_link_libraries(message_rm PRIVATE message_queue)
 
-add_executable(message_info message_info.cpp)
+add_executable(message_info ${SRC_DIR}/message_info.cpp)
 target_link_libraries(message_info PRIVATE message_queue)
