@@ -20,17 +20,19 @@ It includes a reusable class (`MessageQueue`) and a set of CLI utilities for cre
 ## File Structure
 
 ```
-message_queue.hpp       # C++ class interface for message queues
-message_queue.cpp       # Implementation of MessageQueue class
-message_create.cpp      # CLI utility: create a queue
-message_send.cpp        # CLI utility: send a message
-message_receive.cpp     # CLI utility: receive a message
-message_chqbytes.cpp    # CLI utility: change queue max bytes
-message_rm.cpp          # CLI utility: remove queue(s)
-message_info.cpp        # CLI utility: show info about a queue
-CMakeLists.txt          # CMake build file
-README.md               # This documentation
-LICENSE                 # MIT License
+src/
+  message_queue.hpp       # C++ class interface for message queues
+  message_queue.cpp       # Implementation of MessageQueue class
+  message_create.cpp      # CLI utility: create a queue
+  message_send.cpp        # CLI utility: send a message
+  message_receive.cpp     # CLI utility: receive a message
+  message_chqbytes.cpp    # CLI utility: change queue max bytes
+  message_rm.cpp          # CLI utility: remove queue(s)
+  message_info.cpp        # CLI utility: show info about a queue
+
+CMakeLists.txt            # Build system configuration
+README.md                 # Project documentation
+LICENSE                   # MIT License
 ```
 
 ---
