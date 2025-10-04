@@ -31,6 +31,7 @@ src/
   message_info.cpp        # CLI utility: show info about a queue
 
 CMakeLists.txt            # Build system configuration
+CONTRIBUTING.md           # Contributing to project
 README.md                 # Project documentation
 LICENSE                   # MIT License
 ```
